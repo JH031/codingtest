@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e784dd65-edb3-4a1c-bf68-1716b7c1467c" name="Changes" comment="[2주차] 윤준식">
-      <change afterPath="$PROJECT_DIR$/YoonJunSik/week_7/[1차] 뉴스클러스터링.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoonJunSik/week_7/[1차] 캐시.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoonJunSik/week_7/성격유형검사하기.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoonJunSik/week_7/실패율.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoonJunSik/week_7/튜플.java" afterDir="false" />
-    </list>
+    <list default="true" id="e784dd65-edb3-4a1c-bf68-1716b7c1467c" name="Changes" comment="[2주차] 윤준식" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +95,7 @@
       <workItem from="1764510032518" duration="724000" />
       <workItem from="1764510786947" duration="123000" />
       <workItem from="1764510925724" duration="2283000" />
-      <workItem from="1766296466239" duration="382000" />
+      <workItem from="1766296466239" duration="745000" />
     </task>
     <task id="LOCAL-00001" summary="[2주차] 윤준식">
       <option name="closed" value="true" />
