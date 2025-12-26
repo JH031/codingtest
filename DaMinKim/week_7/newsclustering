@@ -1,0 +1,55 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cctype>
+#include <map>
+
+using namespace std;
+
+int solution(string str1, string str2) {
+    // 1. 대소문자 구분 없이 처리하기 위해 소문자로 통일
+    for (int i = 0; i < str1.length(); i++) str1[i] = tolower(str1[i]);
+    for (int i = 0; i < str2.length(); i++) str2[i] = tolower(str2[i]);
+
+    map<string, int> map1, map2;
+    vector<string> all_elements;
+
+    // 2. str1 다중집합 만들기
+    for (int i = 0; i < (int)str1.length() - 1; i++) {
+        if (isalpha(str1[i]) && isalpha(str1[i+1])) {
+            string s = str1.substr(i, 2);
+            map1[s]++;
+            all_elements.push_back(s);
+        }
+    }
+
+    // 3. str2 다중집합 만들기
+    for (int i = 0; i < (int)str2.length() - 1; i++) {
+        if (isalpha(str2[i]) && isalpha(str2[i+1])) {
+            string s = str2.substr(i, 2);
+            map2[s]++;
+            all_elements.push_back(s);
+        }
+    }
+
+    // 중복 제거된 전체 원소 목록 만들기
+    sort(all_elements.begin(), all_elements.end());
+    all_elements.erase(unique(all_elements.begin(), all_elements.end()), all_elements.end());
+
+    // 4. 교집합과 합집합 크기 계산
+    int intersection = 0;
+    int union_set = 0;
+
+    if (map1.empty() && map2.empty()) return 65536; // 둘 다 공집합인 경우
+
+    for (string s : all_elements) {
+        intersection += min(map1[s], map2[s]);
+        union_set += max(map1[s], map2[s]);
+    }
+
+    // 자카드 유사도 계산 (합집합이 0인 경우도 65536 반환)
+    if (union_set == 0) return 65536;
+    
+    double jaccard = (double)intersection / union_set;
+    return (int)(jaccard * 65536);
+}
